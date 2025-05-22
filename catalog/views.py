@@ -6,7 +6,7 @@ from catalog.models import Doctor, Service
 
 class HomeListView(ListView):
     model = Service
-    template_name = "catalog/service_list.html"
+    # template_name = "catalog/service_list.html"
 
 
 class ServiceDetailView(DetailView):

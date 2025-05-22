@@ -1,0 +1,17 @@
+{% extends "catalog/base.html" %}
+{% block content %}
+<div class="card text-center border-success">
+  <div class="card-header">
+    Диагностичекая услуга
+  </div>
+  <div class="card-body text-success">
+    <h5 class="card-title">{{ object.name }}</h5>
+    <p class="card-text">Описание: {{ object.description }}</p>
+    <p class="card-text">Цена: {{ object.price }}</p>
+    <p class="card-text">Доктор: {{ object.doctor }}</p>
+    <a class="btn btn-outline-success" href="#" role="button">Информация о докторе</a>
+    <a class="btn btn-outline-success" href="#" role="button">Записаться</a>
+  </div>
+</div>
+
+{% endblock %}

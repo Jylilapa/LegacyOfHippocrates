@@ -1,3 +1,7 @@
-from django.shortcuts import render
+from django.views.generic import CreateView
 
-# Create your views here.
+from users.models import User
+
+
+class UserCreateView(CreateView):
+    model = User
