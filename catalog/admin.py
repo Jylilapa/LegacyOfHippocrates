@@ -1,5 +1,6 @@
 from django.contrib import admin
-from catalog.models import Doctor, Service
+
+from catalog.models import Doctor, MakeAnAppointment, Service
 
 
 @admin.register(Doctor)
@@ -11,6 +12,16 @@ class DoctorAdmin(admin.ModelAdmin):
 
 @admin.register(Service)
 class ServiceAdmin(admin.ModelAdmin):
-    list_display = ("name", "price", "doctor")
-    list_filter = ("name", "price",)
+    list_display = ("name", "doctor", "price")
+    list_filter = (
+        "name",
+        "price",
+    )
     search_fields = ("name",)
+
+
+@admin.register(MakeAnAppointment)
+class MakeAnAppointmentAdmin(admin.ModelAdmin):
+    list_display = ("first_name", "doctor", "date")
+    list_filter = ("first_name", "doctor", "date")
+    search_fields = ("first_name",)

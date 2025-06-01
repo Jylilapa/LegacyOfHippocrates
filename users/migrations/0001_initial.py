@@ -29,9 +29,7 @@ class Migration(migrations.Migration):
                 ("password", models.CharField(max_length=128, verbose_name="password")),
                 (
                     "last_login",
-                    models.DateTimeField(
-                        blank=True, null=True, verbose_name="last login"
-                    ),
+                    models.DateTimeField(blank=True, null=True, verbose_name="last login"),
                 ),
                 (
                     "is_superuser",
@@ -59,15 +57,11 @@ class Migration(migrations.Migration):
                 ),
                 (
                     "date_joined",
-                    models.DateTimeField(
-                        default=django.utils.timezone.now, verbose_name="date joined"
-                    ),
+                    models.DateTimeField(default=django.utils.timezone.now, verbose_name="date joined"),
                 ),
                 (
                     "email",
-                    models.EmailField(
-                        max_length=254, unique=True, verbose_name="Email"
-                    ),
+                    models.EmailField(max_length=254, unique=True, verbose_name="Email"),
                 ),
                 ("first_name", models.CharField(max_length=20, verbose_name="Фамилия")),
                 ("middle_name", models.CharField(max_length=20, verbose_name="Имя")),

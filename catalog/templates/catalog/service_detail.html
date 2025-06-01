@@ -9,8 +9,10 @@
     <p class="card-text">Описание: {{ object.description }}</p>
     <p class="card-text">Цена: {{ object.price }}</p>
     <p class="card-text">Доктор: {{ object.doctor }}</p>
-    <a class="btn btn-outline-success" href="#" role="button">Информация о докторе</a>
-    <a class="btn btn-outline-success" href="#" role="button">Записаться</a>
+    <a class="btn btn-outline-success" href="{% url 'catalog:doctor_detail' service.pk %}" role="button">Информация о докторе</a>
+    {% if user.is_authenticated %}
+    <a class="btn btn-outline-success" href="{% url 'catalog:makeanappointment_create' %}" role="button">Записаться</a>
+    {% endif %}
   </div>
 </div>
 

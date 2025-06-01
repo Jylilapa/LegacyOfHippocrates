@@ -1,0 +1,42 @@
+{% extends "catalog/base.html" %}
+{% block content %}
+    <div class="row mt-5 mx-auto p-2">
+      <h1>Личный кабинет</h1>
+        <div class="col-1"></div>
+            <div class="row row-cols-1 row-cols-md-2 g-4">
+                  <div class="col">
+                    <div class="card">
+                      <div class="card-body">
+                        <h5 class="card-title">Личные данные</h5>
+                        <p class="card-text">Фамилия: {{ user.first_name }}</p>
+                        <p class="card-text">Имя: {{ user.middle_name }}</p>
+                        <p class="card-text">Отчество: {{ user.last_name }} </p>
+                        <p class="card-text">Номер телефона: {{ user.phone_number }} </p>
+
+                        <a class="btn btn-success" href="{% url 'users:profile_update' %}" role="button">Редактировать</a>
+
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        <div class="col-1"></div>
+    </div>
+
+ <div class="row mt-5 mx-auto p-2">
+          <h2>Записи на прием</h2>
+          <div class="col-1"></div>
+                <div class="row row-cols-1 row-cols-md-2 g-4">
+                  <div class="col">
+                    <div class="card">
+                      <div class="card-body">
+                        <h5>Все ваши записи на прием к врачу здесь. Пожалуйста, приходите на прием за 10-15 минут до начала!</h5>
+                        <a class="btn btn-success" href="{% url 'catalog:makeanappointment_list' %}" role="button">Посмотреть</a>
+
+                      </div>
+                    </div>
+                  </div>
+            </div>
+
+        <div class="col-1"></div>
+    </div>
+{% endblock %}

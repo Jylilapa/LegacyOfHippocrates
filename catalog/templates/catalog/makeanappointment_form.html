@@ -8,8 +8,12 @@
                     {% csrf_token %}
                     {{ form.as_p }}
                 </div>
-                <button type="submit" class="p-2 btn btn-outline-light btn btn-success">
-                    Войти
+                <button type="submit" class="btn btn-success">
+                    {% if object %}
+                    Сохранить
+                    {% else %}
+                    Записаться
+                    {% endif %}
                 </button>
             </div>
         </form>
