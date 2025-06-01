@@ -13,7 +13,7 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 DEBUG = True if os.getenv("DEBUG") == "True" else False
 
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["130.193.41.249', 'localhost', '127.0.0.1"]
 
 
 INSTALLED_APPS = [
@@ -31,7 +31,7 @@ MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
-    "django.middleware.csrf.CsrfViewMiddleware",
+    # "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
@@ -128,3 +128,14 @@ SERVER_EMAIL = EMAIL_HOST_USER
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 LOGIN_URL = "users:login"
+
+CSRF_TRUSTED_ORIGINS = [
+    'http://130.193.41.249',
+    'https://130.193.41.249',
+]
+
+CSRF_COOKIE_SECURE = False  # True если HTTPS
+CSRF_COOKIE_DOMAIN = None
+CSRF_COOKIE_HTTPONLY = False
+SESSION_COOKIE_SECURE = False  # True если HTTPS
+CORS_REPLACE_HTTPS_REFERER = False
