@@ -10,7 +10,7 @@ services:
       - DATABASE_HOST=db
     volumes:
       - .:/app
-      - staticfiles:/app/static/
+      - staticfiles:/app/staticfiles/
     ports:
       - "8000:8000"
     depends_on:
