@@ -2,7 +2,6 @@ import os
 import sys
 from pathlib import Path
 
-from django.conf.global_settings import STATIC_ROOT
 from dotenv import load_dotenv
 
 load_dotenv(override=True)
