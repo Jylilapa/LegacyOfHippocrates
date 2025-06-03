@@ -2,6 +2,7 @@ import os
 import sys
 from pathlib import Path
 
+from django.conf.global_settings import STATIC_ROOT
 from dotenv import load_dotenv
 
 load_dotenv(override=True)
@@ -103,6 +104,7 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 STATICFILES_DIRS = (BASE_DIR / "static",)
+STATIC_ROOT = BASE_DIR / "staticfiles"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
