@@ -1,0 +1,14 @@
+{% extends "catalog/base.html" %}
+{% block content %}
+<div class="card text-center border-success">
+  <div class="card-header">
+    Детали записи
+  </div>
+  <div class="card-body text-success">
+    <h5 class="card-title">Уважаемый {{ object.middle_name }}</h5>
+    <p class="card-text">Вы записаны к врачу: {{ object.doctor }}</p>
+    <p class="card-text">На дату: {{ object.date }}</p>
+  </div>
+</div>
+
+{% endblock %}

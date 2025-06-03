@@ -1,0 +1,36 @@
+{% extends "catalog/base.html" %}
+{% block content %}
+<div class="card-group">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Миссия и ценности</h5>
+      <p class="card-text fst-italic">Мы обязуемся всеми силами и всеми способами исполнять следующую клятву:
+
+Мы будем уважать завоёванные трудом научные достижения тех врачей, по стопам которых я иду, и с радостью поделюсь своими знаниями с теми, кто последуют за мной;
+
+<br/>Мы будем применять во благо больного все необходимые меры, обходя двойную ловушку чрезмерного лечения и врачебного нигилизма;</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="fs-2 fw-semibold text-decoration-underline">Наши доктора</h5>
+      <div class="col">
+          <div class="list-group">
+              {% for doctor in object_list %}
+              <a href="{% url 'catalog:doctor_detail' doctor.pk %}" class="list-group-item list-group-item-action list-group-item-success">
+                  {{ doctor.first_name }} {{ doctor.middle_name }} {{ doctor.last_name }}
+              </a>
+              {% endfor %}
+          </div>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">История компании</h5>
+      <p class="card-text fst-italic">Наследие Гиппократа - одно из старейших частных медицинских заведений в России. Начавшись с единственного реанимобиля и нескольких врачей-энтузиастов, за полтора десятилетия клиника «Наследие Гиппократа» превратилась в один из ведущих медицинских центров России с собственным зданием, современной технической базой и большим профессиональным коллективом.</p>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

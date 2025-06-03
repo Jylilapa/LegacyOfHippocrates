@@ -1,0 +1,23 @@
+{% extends "catalog/base.html" %}
+{% block content %}
+<div class="row mt-7 mx-auto p-4">
+    <div class="card mb-3 border-success" style="max-width: 700px;">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img src="{{ doctor.photo.url }}" class="img-fluid rounded-start">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">{{ doctor.first_name }} {{ doctor.middle_name }} {{ doctor.last_name }}</h5>
+            <p class="card-text">Специализация: {{ doctor.specialization }}</p>
+            <p class="card-text">Опыт работы: {{ doctor.experience }}</p>
+            <p class="card-text">Описание: {{ doctor.description }}</p>
+            {% if user.is_authenticated %}
+              <a class="btn btn-outline-success" href="{% url 'catalog:makeanappointment_create' %}" role="button">Записаться</a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+{% endblock %}
